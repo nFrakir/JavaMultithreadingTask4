@@ -5,6 +5,7 @@ import java.io.File;
 public class MultiThreadCopying {
 
     static void copyFiles(File folderFrom, File folderTo, int threadNumber) {
+        boolean dirCreated = folderTo.mkdirs();
         SingleThreadCopying[] threadarray = new SingleThreadCopying[threadNumber];
         File[] array = folderFrom.listFiles();
 
